@@ -1,0 +1,6 @@
+{{question}}
+<ul>
+    {%for i in question.choice_set.all%}
+    <li>{{i}}</li>
+    {%endfor%}
+</ul>
