@@ -2,3 +2,4 @@
 /helloDjango/__pycache__
 /polls/__pycache__
 db.sqlite3
+/env

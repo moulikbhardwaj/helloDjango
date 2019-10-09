@@ -1,4 +1,4 @@
-#!/home/moulik/github/helloDjango/env/bin/python3
+#!/home/moulik/github/helloDjango/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
