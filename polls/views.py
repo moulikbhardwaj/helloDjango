@@ -17,7 +17,8 @@ def details(request, question_id):
 	return render(request, 'polls/details.html',{'question':question})
 
 def results(request, question_id):
-	return HttpResponse('You are looking at results of question {}'.format(question_id))
+	question = get_object_or_404(Question,pk=question_id)
+	return render(request,'polls/results.html',{'question':question})
 
 def vote(request, question_id):
 	question = get_object_or_404(Question,pk=question_id)
@@ -26,6 +27,6 @@ def vote(request, question_id):
 	except(KeyError,Choice.DoesNotExist):
 		return render(request, 'polls/detail.html',{'question':question, 'error_message':'You did\'nt selected a choice'})
 	else:
-		selected_choic.vote+=1
+		selected_choice.votes +=1
 		selected_choice.save()
 		return HttpResponseRedirect(reverse('polls:results', args=(question_id,)))
